@@ -6,7 +6,10 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 
-app = Flask(__name__)
+from flask_cors import CORS
+
+app = Flask(_name_)
+CORS(app)
 
 def check_api_key(func):
     def wrapper(*args, **kwargs):
@@ -46,5 +49,5 @@ def generate_text():
     return jsonify({'generated_text': response})
 
 # Run Flask app
-if __name__ == '__main__':
+if _name_ == '_main_':
     app.run(debug=True)
